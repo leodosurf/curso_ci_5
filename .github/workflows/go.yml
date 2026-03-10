@@ -58,10 +58,10 @@ jobs:
         name: programa
         path: main
 
-#  docker:
-#    needs: build
-#    uses: ./.github/workflows/Docker.yml
-#    secrets: inherit
+  docker:
+    needs: build
+    uses: ./.github/workflows/Docker.yml
+    secrets: inherit
 
 #  EC2:
 #    needs: build
