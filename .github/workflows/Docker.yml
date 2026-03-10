@@ -25,5 +25,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: leodosurf/testeci
+        tags: leodosurf/testeci:${{ github.run_number}}
     
