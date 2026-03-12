@@ -28,7 +28,7 @@ jobs:
     - name: Setup Python 
       uses: actions/setup-python@v6.2.0
       with:
-        python-version: 3.15
+        python-version: 3.12.3
     
     - uses: BSFishy/pip-action@v1
       with: 
