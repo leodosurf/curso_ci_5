@@ -48,9 +48,11 @@ jobs:
       continue-on-error: true
       run: echo "REQUEST=O" >> $GITHUB_ENV; sleep 30s; wget LB-API-GO-428728704.us-east-1.elb.amazonaws.com:8000/leo || echo "REQUEST=1" >> $GITHUB_ENV
 
+    - name: verificando requisição
+      run: echo ${{ env.REQUEST }}
+
     - name: Deploy Amazon ECS task definition 
       if: ${{ env.REQUEST != 0 }}
-      run: echo ${{ env.REQUEST }}
       uses: aws-actions/amazon-ecs-deploy-task-definition@v2
       with: 
         task-definition: task-definition.json.bak
