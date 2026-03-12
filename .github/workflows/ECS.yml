@@ -49,12 +49,12 @@ jobs:
       run: echo "REQUEST=O" >> $GITHUB_ENV; sleep 30s; wget LB-API-GO-428728704.us-east-1.elb.amazonaws.com:8000/leo || echo "REQUEST=1" >> $GITHUB_ENV
 
     - name: Deploy Amazon ECS task definition 
-      if: ${{ env. REQUEST != 0 }}
+      if: ${{ env.REQUEST != 0 }}
       uses: aws-actions/amazon-ecs-deploy-task-definition@v2
       with: 
         task-definition: task-definition.json.bak
         service: Servico_API-GO
-        cluster: API-GO
+        cluster: API-GO2
         wait-for-service-stability: true
 
 
