@@ -50,6 +50,7 @@ jobs:
 
     - name: Deploy Amazon ECS task definition 
       if: ${{ env.REQUEST != 0 }}
+      run: echo ${{ env.REQUEST }}
       uses: aws-actions/amazon-ecs-deploy-task-definition@v2
       with: 
         task-definition: task-definition.json.bak
